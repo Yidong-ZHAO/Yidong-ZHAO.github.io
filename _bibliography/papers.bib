@@ -10,6 +10,7 @@
   year={2025},
   html={https://arxiv.org/abs/2507.09435},
   bibtex_show={true},
+  preview={geowarp.jpg},
   abstract={The material point method (MPM), a hybrid Lagrangian-Eulerian particle method, is increasingly used to simulate large-deformation and history-dependent behavior of geomaterials. While explicit time integration dominates current MPM implementations due to its algorithmic simplicity, such schemes are unsuitable for quasi-static and long-term processes typical in geomechanics. Implicit MPM formulations are free of these limitations but remain less adopted, largely due to the difficulty of computing the Jacobian matrix required for Newton-type solvers, especially when consistent tangent operators should be derived for complex constitutive models. In this paper, we introduce GeoWarp -- an implicit MPM framework for geomechanics built on NVIDIA Warp -- that exploits GPU parallelism and reverse-mode automatic differentiation to compute Jacobians without manual derivation. To enhance efficiency, we develop a sparse Jacobian construction algorithm that leverages the localized particle-grid interactions intrinsic to MPM. The framework is verified through forward and inverse examples in large-deformation elastoplasticity and coupled poromechanics. Results demonstrate that GeoWarp provides a robust, scalable, and extensible platform for differentiable implicit MPM simulation in computational geomechanics.}
 }
 
