@@ -35,7 +35,7 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 
 Hi! My name is Yidong Zhao (赵忆冬). I am an incoming Postdoctoral researcher at ETH Zurich, working with [Prof. Johan Gaume](https://alpinemassmovements.ethz.ch/people/professor-johan-gaume.html) at [the Chair of Alpine Mass Movements](https://alpinemassmovements.ethz.ch/).
 
-I graduated from KAIST Civil and Environmental Engineering Department, supervised by [Prof. Jinhyun Choo](https://www.choogroup.org/jinhyun-choo) at [KAIST Geomechanics Lab](https://www.choogroup.org/). I was also fortunate to visit [UCLA Artificial Intelligence & Visual Computing Laboratory](https://www.math.ucla.edu/aivc/) supervised by [Prof. Chenfanfu Jiang](https://www.math.ucla.edu/~cffjiang/index.html). I also spent 2.5 years at the University of Hong Kong as a former Ph.D. student. After that, I transferred with my supervisor. I obtained my Bachelor’s and Master’s degrees both from Tongji University in 2016 and 2019, respectively.
+I graduated from KAIST Civil and Environmental Engineering Department, supervised by [Prof. Jinhyun Choo](https://www.choogroup.org/jinhyun-choo) at [KAIST Geomechanics Lab](https://www.choogroup.org/). I was also fortunate to visit [UCLA Artificial Intelligence & Visual Computing Laboratory](https://www.math.ucla.edu/aivc/) supervised by [Prof. Chenfanfu Jiang](https://www.math.ucla.edu/~cffjiang/index.html). I spent 2.5 years at the University of Hong Kong as a former Ph.D. student. After that, I transferred with my supervisor. I obtained my Bachelor’s and Master’s degrees both from Tongji University in 2016 and 2019, respectively.
 
 <!-- My research interests include large deformation simulation, contact mechanics, and data-driven modeling. -->
 
