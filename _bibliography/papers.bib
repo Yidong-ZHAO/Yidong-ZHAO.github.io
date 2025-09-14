@@ -14,7 +14,6 @@
   abstract={The material point method (MPM), a hybrid Lagrangian-Eulerian particle method, is increasingly used to simulate large-deformation and history-dependent behavior of geomaterials. While explicit time integration dominates current MPM implementations due to its algorithmic simplicity, such schemes are unsuitable for quasi-static and long-term processes typical in geomechanics. Implicit MPM formulations are free of these limitations but remain less adopted, largely due to the difficulty of computing the Jacobian matrix required for Newton-type solvers, especially when consistent tangent operators should be derived for complex constitutive models. In this paper, we introduce GeoWarp -- an implicit MPM framework for geomechanics built on NVIDIA Warp -- that exploits GPU parallelism and reverse-mode automatic differentiation to compute Jacobians without manual derivation. To enhance efficiency, we develop a sparse Jacobian construction algorithm that leverages the localized particle-grid interactions intrinsic to MPM. The framework is verified through forward and inverse examples in large-deformation elastoplasticity and coupled poromechanics. Results demonstrate that GeoWarp provides a robust, scalable, and extensible platform for differentiable implicit MPM simulation in computational geomechanics.}
 }
 
-
 @article{cao2025unstructured,
   title={Unstructured moving least squares material point methods: a stable kernel approach with continuous gradient reconstruction on general unstructured tessellations},
   author={Cao, Yadi and Zhao, Yidong and Li, Minchen and Yang, Yin and Choo, Jinhyun and Terzopoulos, Demetri and Jiang, Chenfanfu},
@@ -24,8 +23,125 @@
   pages={655--678},
   year={2025},
   publisher={Springer},
+  abbr={CompMech},
+  selected={true},
   html={https://link.springer.com/article/10.1007/s00466-024-02524-x},
   bibtex_show={true},
-  preview={UMLS.jpg},
+  preview={UMLS.png},
   abstract={The material point method (MPM) is a hybrid Eulerian Lagrangian simulation technique for solid mechanics with significant deformation. Structured background grids are commonly employed in the standard MPM, but they may give rise to several accuracy problems in handling complex geometries. When using (2D) unstructured triangular or (3D) tetrahedral background elements, however, significant challenges arise (e.g., cell-crossing error). Substantial numerical errors develop due to the inherent $\mathcal{C}^0$ continuity property of the interpolation function, which causes discontinuous gradients across element boundaries. Prior efforts in constructing $\mathcal{C}^1$ continuous interpolation functions have either not been adapted for unstructured grids or have only been applied to 2D triangular meshes. In this study, an unstructured moving least squares MPM (UMLS-MPM) is introduced to accommodate 2D and 3D simplex tessellation. The central idea is to incorporate a diminishing function into the sample weights of the MLS kernel, ensuring an analytically continuous velocity gradient estimation. Numerical analyses confirm the method’s capability in mitigating cell crossing inaccuracies and realizing expected convergence.}
+}
+
+@article{zhao2024mapped,
+  title={Mapped material point method for large deformation problems with sharp gradients and its application to soil-structure interactions},
+  author={Zhao, Yidong and Li, Minchen and Jiang, Chenfanfu and Choo, Jinhyun},
+  journal={International Journal for Numerical and Analytical Methods in Geomechanics},
+  volume={48},
+  number={9},
+  pages={2334--2355},
+  year={2024},
+  publisher={Wiley Online Library},
+  abbr={IJNAMG},
+  selected={true},
+  html={https://onlinelibrary.wiley.com/doi/full/10.1002/nag.3731},
+  bibtex_show={true},
+  preview={mapped.png},
+  abstract={The material point method (MPM) is often applied to large deformation problems that involve sharp gradients in the solution field. Representative examples in geomechanics are interactions between soils and various “structures” such as foundations, penetrometers, and machines, where the displacement fields exhibit sharp gradients around the soil-structure interfaces. Such sharp gradients should be captured properly in the MPM discretization to ensure that the numerical solution is sufficiently accurate. In the MPM literature, several types of locally refined discretizations have been developed and used for this purpose. However, these local refinement schemes are not only quite complicated but also restricted to certain types of basis functions or update schemes. In this work, we propose a new MPM formulation, called the mapped MPM, that can efficiently capture sharp gradients with a uniform background grid compatible with every standard MPM basis function and scheme. The mapped MPM is built on the method of auxiliary mapping that reparameterizes the given problem in a different domain whereby sharp gradients become much smoother. Because the reparameterized problem is free of undesirably sharp gradients, it can be well solved with the standard MPM ingredients including a uniform background grid. We verify and demonstrate the mapped MPM through several numerical examples, with particular attention to soil-structure interaction problems.}
+}
+
+@article{zhao2023circumventing,
+  title={{Circumventing volumetric locking in explicit material point methods: A simple, efficient, and general approach}},
+  author={Zhao, Yidong and Jiang, Chenfanfu and Choo, Jinhyun},
+  journal={International Journal for Numerical Methods in Engineering},
+  volume={124},
+  number={23},
+  pages={5334--5355},
+  year={2023},
+  publisher={Wiley Online Library},
+  abbr={IJNME},
+  selected={true},
+  html={https://onlinelibrary.wiley.com/doi/full/10.1002/nme.7347},
+  bibtex_show={true},
+  preview={locking.png},
+  abstract={The material point method (MPM) is frequently used to simulate large deformations of nearly incompressible materials such as water, rubber, and undrained porous media. However, MPM solutions to nearly incompressible materials are susceptible to volumetric locking, that is, overly stiff behavior with erroneous strain and stress fields. While several approaches have been devised to mitigate volumetric locking in the MPM, they require significant modifications of the existing MPM machinery, often tailored to certain basis functions or material types. In this work, we propose a locking-mitigation approach featuring an unprecedented combination of simplicity, efficacy, and generality for a family of explicit MPM formulations. The approach combines the assumed deformation gradient ($\bar{\boldsymbol{F}}$) method with a volume-averaging operation built on the standard particle–grid transfer scheme in the MPM. Upon explicit time integration, this combination yields a new and simple algorithm for updating the deformation gradient, preserving all other MPM procedures. The proposed approach is thus easy to implement, low-cost, and compatible with the existing machinery in the MPM. Through various types of nearly incompressible problems in solid and fluid mechanics, we verify that the proposed approach efficiently circumvents volumetric locking in the explicit MPM, regardless of the basis functions and material types.}
+}
+
+@article{zhao2023coupled,
+  title={Coupled material point and level set methods for simulating soils interacting with rigid objects with complex geometry},
+  author={Zhao, Yidong and Choo, Jinhyun and Jiang, Yupeng and Li, Liuchi},
+  journal={Computers and Geotechnics},
+  volume={163},
+  pages={105708},
+  year={2023},
+  publisher={Elsevier},
+  abbr={CG},
+  selected={true},
+  html={https://www.sciencedirect.com/science/article/abs/pii/S0266352X23004652},
+  bibtex_show={true},
+  preview={LSMPM.png},
+  abstract={The material point method (MPM) is often used to simulate soils that interact with (nearly) rigid objects, such as structures, machines, or rocks. Yet MPM simulations of such problems are quite challenging when the objects have complex shapes. In this paper, we propose an efficient approach for incorporating geometrically complex rigid objects into MPM modeling. The proposed approach leverages the level set method, which can efficiently delineate arbitrary surface geometry, to represent the boundary of a discrete object. For coupling the level set object with the MPM domain, a robust algorithm is developed on the basis of contact mechanics. Through numerical examples of varied complexity, we verify the proposed approach and demonstrate its ability to efficiently simulate challenging problems wherein soils interact with complex rigid objects such as debris-resisting baffles, a vehicle wheel, and basal terrain.}
+}
+
+@article{liang2023revealing,
+  title={Revealing the role of forests in the mobility of geophysical flows},
+  author={Liang, Zhengyu and Choi, Clarence Edward and Zhao, Yidong and Jiang, Yupeng and Choo, Jinhyun},
+  journal={Computers and Geotechnics},
+  volume={155},
+  pages={105194},
+  year={2023},
+  publisher={Elsevier},
+  abbr={CG},
+  selected={true},
+  html={https://www.sciencedirect.com/science/article/abs/pii/S0266352X22005316},
+  bibtex_show={true},
+  preview={tree.png},
+  abstract={Forests cover 39% of low-altitude mountainous areas globally, and they are considered natural barriers against geophysical flows. Owing to the complexity of flows, the protective effects of forests can hardly be considered in hazard management. In this study, the interactions between granular geophysical flows and forests are explored using a MPM-DEM simulator from a viewpoint of supersonic bow shocks. We show that bow shocks can be approximated by a non-linear analytical framework based on the Mach cone theory. To generate evidence of flow–forest interactions, a new experimental model forest is built. Then, a computational model of granular impact on trees is calibrated and solved by the MPM-DEM method. The results reveal that interactions between overlapping bow shocks considerably affect the flow mobility. Bow shocks either reduce flow momentum or concentrate momentum to increase the runout distance by a factor of up to 1.5 compared with the runout distance of a non-forested area. The revealed bow shock effects on flow momentum can guide the assessment of cultivated forests in impeding geophysical flows. The revealed bow shocks and their ability to change the flow runout highlight the need to explore new models other than classical models based only on basal friction.}
+}
+
+@article{jiang2022hybrid,
+  title={Hybrid continuum--discrete simulation of granular impact dynamics},
+  author={Jiang, Yupeng and Zhao, Yidong and Choi, Clarence E and Choo, Jinhyun},
+  journal={Acta Geotechnica},
+  volume={17},
+  number={12},
+  pages={5597--5612},
+  year={2022},
+  publisher={Springer},
+  abbr={ActaGeo},
+  selected={true},
+  html={https://link.springer.com/article/10.1007/s11440-022-01598-2},
+  bibtex_show={true},
+  preview={MPDEM.png},
+  abstract={Granular impact--—the dynamic intrusion of solid objects into granular media—--is widespread across scientific and engineering applications including geotechnics. Existing approaches to the simulation of granular impact dynamics have relied on either a purely discrete method or a purely continuum method. Neither of these methods, however, is deemed optimal from the computational perspective. Here, we introduce a hybrid continuum-–discrete approach, built on the coupled material-point and discrete-element method (MP--DEM), for simulation of granular impact dynamics with unparalleled efficiency. To accommodate highly complex solid--granular interactions, we enhance the existing MP--DEM formulation with three new ingredients: (i) a robust contact algorithm that couples the continuum and discrete parts without any interpenetration under extreme impact loads, (ii) large deformation kinematics employing multiplicative elastoplasticity, and (iii) a trans-phase constitutive relation capturing gasification of granular media. For validation, we also generate experimental data through laboratory measurement of the impact dynamics of solid spheres dropped onto dry sand. Simulation of the experiments shows that the proposed approach can well reproduce granular impact dynamics in terms of impact forces, intrusion depths, and splash patterns. Furthermore, through parameter studies on material properties, model formulations, and numerical schemes, we identify key factors for successful continuum--discrete simulation of granular impact dynamics.}
+}
+
+@article{zhao2022barrier,
+  title={A barrier method for frictional contact on embedded interfaces},
+  author={Zhao, Yidong and Choo, Jinhyun and Jiang, Yupeng and Li, Minchen and Jiang, Chenfanfu and Soga, Kenichi},
+  journal={Computer Methods in Applied Mechanics and Engineering},
+  volume={393},
+  pages={114820},
+  year={2022},
+  publisher={Elsevier},
+  abbr={CMAME},
+  selected={true},
+  html={https://www.sciencedirect.com/science/article/abs/pii/S0045782522001414},
+  bibtex_show={true},
+  preview={barrier.png},
+  abstract={We present a barrier method for treating frictional contact on interfaces embedded in finite elements. The barrier treatment has several attractive features, including: (i) it does not introduce any additional degrees of freedom or iterative steps, (ii) it is free of inter-penetration, (iii) it avoids an ill-conditioned matrix system, and (iv) it allows one to control the solution accuracy directly. We derive the contact pressure from a smooth barrier energy function that is designed to satisfy the non-penetration constraint. Likewise, we make use of a smoothed friction law in which the stick–slip transition is described by a continuous function of the slip displacement. We discretize the formulation using the extended finite element method to embed interfaces inside elements, and devise an averaged surface integration scheme that effectively provides stable solutions without traction oscillations. Subsequently, we develop a way to tailor the parameters of the barrier method to embedded interfaces, such that the method can be used without parameter tuning. We verify and investigate the proposed method through numerical examples with varied levels of complexity. The numerical results demonstrate that the proposed method is remarkably robust for challenging frictional contact problems, while requiring low cost comparable to that of the penalty method.}
+}
+
+@article{zhao2020stabilized,
+  title={Stabilized material point methods for coupled large deformation and fluid flow in porous materials},
+  author={Zhao, Yidong and Choo, Jinhyun},
+  journal={Computer Methods in Applied Mechanics and Engineering},
+  volume={362},
+  pages={112742},
+  year={2020},
+  publisher={Elsevier},
+  abbr={CMAME},
+  selected={true},
+  html={https://www.sciencedirect.com/science/article/abs/pii/S0045782519306322},
+  bibtex_show={true},
+  preview={stabilized.png},
+  abstract={The material point method (MPM) has been increasingly used for the simulation of large-deformation processes in fluid-infiltrated porous materials. For undrained poromechanical problems, however, standard MPMs are numerically unstable because they use low-order interpolation functions that violate the inf–sup stability condition. In this work, we develop stabilized MPM formulations for dynamic and quasi-static poromechanics that permit the use of standard low-order interpolation functions notwithstanding the drainage condition. For the stabilization of both dynamic and quasi-static formulations, we utilize the polynomial pressure projection method whereby a stabilization term is augmented to the balance of mass. The stabilization term can be implemented with both the original and generalized interpolation material point (GIMP) methods, and it is compatible with existing time-integration methods. Here we use fully-implicit methods for both dynamic and quasi-static poromechanical problems, aided by a block-preconditioned Newton–Krylov solver. The stabilized MPMs are verified and investigated through several numerical examples under dynamic and quasi-static conditions. Results show that the proposed MPM formulations allow standard low-order interpolation functions to be used for both the solid displacement and pore pressure fields of poromechanical formulations, from undrained to drained conditions, and from dynamic to quasi-static conditions.}
 }
